@@ -37,20 +37,24 @@ jobs:
 #          git push origin $new_tag
 
   VeracodeContainer:
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     #needs: build
     steps:
       - name : CheckOut test
         uses: actions/checkout@v2
+
+      - uses: jirutka/setup-alpine@v1
+        with:
+          branch: v3.15
+          packages: >
+            libc6-compat
       - name: Run Veracode Container
         env:
           VID: ${{ secrets.VID}}
           VKEY: $${{ secrets.VKEY}}
         run : |
-          apk add --no-cache curl libc6-compat
-          cd /tmp
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
           ls -l
           ./veracode version          
-      
+        shell: alpine.sh {0}
 
