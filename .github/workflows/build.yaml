@@ -56,6 +56,8 @@ jobs:
           VERACODE_API_KEY_SECRET: $${{ secrets.VKEY }}
         run : |
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
+          export VERACODE_API_KEY_ID
+          export VERACODE_API_KEY_SECRET
           ./veracode configure
           ./veracode scan --source . --type directory --format table        
         shell: alpine.sh {0}
