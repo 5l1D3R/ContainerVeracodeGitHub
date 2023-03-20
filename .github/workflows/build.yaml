@@ -19,10 +19,10 @@ jobs:
           VERACODE_API_KEY_SECRET: '${{ secrets.VKEY }}'
         run : |
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
-          ./veracode scan --source . --type directory --format text --output results.json  
+          ./veracode scan --source . --type directory --format table --output results.txt  
 
       - name: Save Contenair Results
         uses: actions/upload-artifact@v1
         with:
           name: ContainerResults
-          path: results.json
+          path: results.txt
