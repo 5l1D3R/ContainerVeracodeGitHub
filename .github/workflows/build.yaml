@@ -57,6 +57,6 @@ jobs:
         run : |
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
           ls -l
-          ./veracode version          
+          ./veracode scan --source . --type directory --format table        
         shell: alpine.sh {0}
 
