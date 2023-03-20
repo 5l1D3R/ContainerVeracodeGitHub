@@ -52,11 +52,12 @@ jobs:
 
       - name: Run Veracode Container
         env:
-          VID: ${{ secrets.VID}}
-          VKEY: $${{ secrets.VKEY}}
+          VERACODE_API_KEY_ID: ${{ secrets.VID}}
+          VERACODE_API_KEY_SECRET: $${{ secrets.VKEY}}
         run : |
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
           ls -l
+          ./veracode configure
           ./veracode scan --source . --type directory --format table        
         shell: alpine.sh {0}
 
