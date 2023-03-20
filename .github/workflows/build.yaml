@@ -11,7 +11,7 @@ jobs:
       - name : CheckOut test
         uses: actions/checkout@v2
       - name : Install packages
-        run: sudo apt-get -qy install curl libc6-compat
+        run: sudo apt-get -qy install curl libc6
       #- uses: jirutka/setup-alpine@v1
       #  with:
       #    branch: v3.15
