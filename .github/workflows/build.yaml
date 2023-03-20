@@ -20,6 +20,7 @@ jobs:
         run : |
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
           ./veracode scan --source . --type directory --format table --output results.txt  
+        continue-on-error: false
 
       - name: Save Contenair Results
         uses: actions/upload-artifact@v1
