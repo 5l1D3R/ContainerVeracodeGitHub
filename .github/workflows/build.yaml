@@ -48,6 +48,8 @@ jobs:
           branch: v3.15
           packages: >
             libc6-compat
+            curl
+
       - name: Run Veracode Container
         env:
           VID: ${{ secrets.VID}}
