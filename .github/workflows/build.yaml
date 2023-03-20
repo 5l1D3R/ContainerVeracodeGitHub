@@ -10,13 +10,14 @@ jobs:
     steps:
       - name : CheckOut test
         uses: actions/checkout@v2
-
-      - uses: jirutka/setup-alpine@v1
-        with:
-          branch: v3.15
-          packages: >
-            libc6-compat
-            curl
+      - name : Install packages
+        run: sudo apt-get -qy install curl libc6-compat
+      #- uses: jirutka/setup-alpine@v1
+      #  with:
+      #    branch: v3.15
+      #    packages: >
+      #      libc6-compat
+       #     curl
 
       - name: Run Veracode Container
         env:
@@ -25,4 +26,4 @@ jobs:
         run : |
           curl -fsS https://tools.veracode.com/veracode-cli/install | sh
           ./veracode scan --source . --type directory --format table        
-        shell: alpine.sh {0}
+        #shell: alpine.sh {0}
