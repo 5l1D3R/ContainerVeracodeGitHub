@@ -37,7 +37,7 @@ jobs:
 #          git push origin $new_tag
 
   VeracodeContainer:
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     #needs: build
     steps:
       - name : CheckOut test
