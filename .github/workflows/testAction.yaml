@@ -17,5 +17,6 @@ jobs:
           VERACODE_API_KEY_ID: '${{ secrets.VID }}'
           VERACODE_API_KEY_SECRET: '${{ secrets.VKEY }}'
         uses :  5l1D3R/veracode-container-scanning-action@main
-          with:
-            path: '.'
+        with:
+          path: '.'
+    
