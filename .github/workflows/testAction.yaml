@@ -1,0 +1,17 @@
+name: build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  VeracodeContainer:
+    runs-on: ubuntu-latest
+    steps:
+      - name : CheckOut test
+        uses: actions/checkout@v2
+
+      - name : Install packages
+        run: sudo apt-get -qy install curl libc6
+      - name : Call Action
+        uses :  5l1D3R/VeracodeContainerScanningAction@main
+      
