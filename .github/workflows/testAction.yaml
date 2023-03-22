@@ -13,10 +13,9 @@ jobs:
       - name : Install packages
         run: sudo apt-get -qy install curl libc6
       - name : Veracode Container
-        env:
-          VERACODE_API_KEY_ID: '${{ secrets.VID }}'
-          VERACODE_API_KEY_SECRET: '${{ secrets.VKEY }}'
         uses :  5l1D3R/veracode-container-scanning-action@main
         with:
+          vid: '${{ secrets.VID }}'
+          vkey: '${{ secrets.VKEY }}'
           path: '.'
     
