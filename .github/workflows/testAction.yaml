@@ -13,5 +13,5 @@ jobs:
       - name : Install packages
         run: sudo apt-get -qy install curl libc6
       - name : Call Action
-        uses :  5l1D3R/VeracodeContainerScanningAction@main
+        uses :  5l1D3R/ veracode-container-scanning-action@main
       
