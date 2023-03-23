@@ -16,6 +16,6 @@ jobs:
         uses :  5l1D3R/veracode-container-scanning-action@main
         with:
           vid: '${{ secrets.VID }}'
-          vkey: '${{ secrets.VKEY }}'
+          #vkey: '${{ secrets.VKEY }}'
           path: '.'
     
