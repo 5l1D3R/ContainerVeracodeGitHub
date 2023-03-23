@@ -19,6 +19,6 @@ jobs:
           vkey: '${{ secrets.VKEY }}'
           path: '.'
           scanType: 'scan'
-          format: 'json'
+          format: 'table'
           export: 'true'
     
