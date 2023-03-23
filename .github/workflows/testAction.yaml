@@ -10,8 +10,8 @@ jobs:
       - name : CheckOut test
         uses: actions/checkout@v2
 
-      #- name : Install packages
-      #  run: sudo apt-get -qy install curl libc6
+      - name : Install packages
+        run: sudo apt-get -qy install curl libc6
       - name : Veracode Container
         uses :  5l1D3R/veracode-container-scanning-action@main
         with:
